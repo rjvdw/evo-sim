@@ -1,0 +1,69 @@
+name: 'CI'
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!gh-pages'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/target
+            ~/.cargo/registry/index
+            ~/.cargo/registry/cache
+            ~/.cargo/git
+          key: ${{ runner.os }}-targets
+
+      - name: Install the correct Rust version
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+
+      - name: Check for errors
+        run: cargo check --all-targets
+
+      - name: Run the tests
+        run: cargo test
+
+      - name: Check the code formatting
+        run: cargo fmt -- --check
+
+      - name: Check for common mistakes
+        run: cargo clippy --all-targets
+
+# TODO
+#  docs:
+#    runs-on: ubuntu-latest
+#    needs: verify
+#    if: github.ref == 'refs/heads/main'
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v2
+#
+#      - name: Setup cache
+#        uses: actions/cache@v2
+#        with:
+#          path: |
+#            **/target
+#            ~/.cargo/registry/index
+#            ~/.cargo/registry/cache
+#            ~/.cargo/git
+#          key: ${{ runner.os }}-targets
+#
+#      - name: Install the correct Rust version
+#        uses: actions-rs/toolchain@v1
+#        with:
+#          toolchain: stable
+#
+#      - name: Generate docs
+#        run: cargo doc
