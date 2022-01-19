@@ -1,0 +1,7 @@
+[package]
+name = "rdcl-evo-sim"
+version = "0.1.0"
+edition = "2021"
+default-run = "rdcl-evo-sim"
+
+[dependencies]
