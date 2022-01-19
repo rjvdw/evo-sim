@@ -47,6 +47,17 @@ impl Field {
     pub fn at(&self, row: u32, col: u32) -> Option<Creature> {
         self.locations.get(&(row, col)).map(|boxed| **boxed)
     }
+
+    /// Let the field evolve one step.
+    pub fn next(&mut self) {
+        for creature in self.creatures.iter_mut() {
+            let position = creature.position();
+            self.locations.remove(&position);
+            creature.walk(self.height, self.width);
+            self.locations
+                .insert(creature.position(), Box::new(**creature));
+        }
+    }
 }
 
 impl fmt::Display for Field {
