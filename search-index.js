@@ -1,0 +1,5 @@
+var searchIndex = JSON.parse('{\
+"rdcl_evo_sim":{"doc":"Runs the simulation and records the results to a file.","t":[5],"n":["main"],"q":["rdcl_evo_sim"],"d":[""],"i":[0],"f":[[[]]],"p":[]},\
+"rdcl_evo_sim_lib":{"doc":"The core logic for the evolution simulator.","t":[0,3,11,11,11,11,11,11,11,11,11,11,11,11,11,11],"n":["creature","Creature","borrow","borrow_mut","clone","clone_into","fmt","fmt","from","into","new","to_owned","to_string","try_from","try_into","type_id"],"q":["rdcl_evo_sim_lib","rdcl_evo_sim_lib::creature","","","","","","","","","","","","","",""],"d":["Represents a creature that lives inside the simulation.","A creature that lives inside the simulation.","","","","","","","","","Initializes a new creature with a given ID and position.","","","","",""],"i":[0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"f":[null,null,[[]],[[]],[[],["creature",3]],[[]],[[["formatter",3]],["result",6]],[[["formatter",3]],["result",6]],[[]],[[]],[[["u64",15]],["creature",3]],[[]],[[],["string",3]],[[],["result",4]],[[],["result",4]],[[],["typeid",3]]],"p":[[3,"Creature"]]}\
+}');
+if (window.initSearch) {window.initSearch(searchIndex)};

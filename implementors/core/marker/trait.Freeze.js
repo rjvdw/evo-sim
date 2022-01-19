@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["rdcl_evo_sim_lib"] = [{"text":"impl Freeze for <a class=\"struct\" href=\"rdcl_evo_sim_lib/creature/struct.Creature.html\" title=\"struct rdcl_evo_sim_lib::creature::Creature\">Creature</a>","synthetic":true,"types":["rdcl_evo_sim_lib::creature::Creature"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
