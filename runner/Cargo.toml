@@ -5,3 +5,4 @@ edition = "2021"
 default-run = "rdcl-evo-sim"
 
 [dependencies]
+rdcl-evo-sim-lib = { path = "../lib" }
